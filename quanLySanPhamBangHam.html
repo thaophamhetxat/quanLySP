@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Add New Product</h2>
+<input type="text" id="dauVao">
+<button type="button" style="background: cornflowerblue" onclick="add()">add</button>
+<h2>Display All Product</h2>
+<table id="hienthi">
+<tr>
+    <td></td>
+</tr>
+</table>
+
+<script>
+    let dssp = ['IP1', 'IP2', 'SSS10', 'Z1000', 'R1']
+    hienThi();
+
+    function hienThi() {
+        let str = '';
+        str += "<tr>\n" +
+            "    <td colspan=\"2\">ProductNames</td>\n" +
+            "    <td>" + dssp.length + " products</td>\n" +
+            "</tr>"
+        for (let i = 0; i < dssp.length; i++) {
+            str += "    <tr>\n" +
+                "        <td>" + dssp[i] + "</td>\n" +
+                "        <td><button onclick='edit(" + i + ")'>Edit</button></td>\n" +
+                "        <td><button>Delete</button></td>\n" +
+                "    </tr>"
+
+        }
+        document.getElementById('hienthi').innerHTML = str;
+    }
+
+    function add() {
+        let input = document.getElementById('dauVao').value;
+        dssp.push(input);
+        hienThi();
+    }
+
+    function edit(viTri) {
+        let moi = prompt('Nhập vào dữ liệu mới: ');
+        dssp[viTri] = moi;
+        hienThi();
+    }
+</script>
+</body>
+</html>

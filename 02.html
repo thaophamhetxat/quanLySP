@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Add New Product</h2>
+<input type="text" id="input">
+<button type="button" style="background: cornflowerblue" onclick="add()">add</button>
+<h2>Display All Product</h2>
+
+<div class="bang">
+    <div>
+        <h4>Product Name</h4>
+    </div>
+    <div>
+        <table border="1">
+            <tr>
+                <th>STT</th>
+                <th>Tên sản phẩm</th>
+                <th>edit</th>
+                <th>xóa</th>
+            </tr>
+            <tbody id="result">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    let productList=[];
+    function showProduct(){
+        document.getElementById('result').innerHTML='';
+        for(let i=0; i<productList.length;i++){
+            <td>productList[i]</td>
+
+        }
+    }
+</script>
+</body>
+</html>
